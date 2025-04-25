@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 
 const Navbar = () => {
   return (
@@ -8,10 +9,26 @@ const Navbar = () => {
       </div>
 
       <ul className="hidden md:flex gap-6 text-[#964B00] font-medium px-20 font-serif">
-        <li className="hover:underline cursor-pointer">Home</li>
-        <li className="hover:underline cursor-pointer">About</li>
-        <li className="hover:underline cursor-pointer">Products</li>
-        <li className="hover:underline cursor-pointer">Contact</li>
+        <li>
+          <Link to="/" className="hover:underline cursor-pointer">
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link to="/" className="hover:underline cursor-pointer">
+            About
+          </Link>
+        </li>
+        <li>
+          <Link to="/products" className="hover:underline cursor-pointer">
+            Products
+          </Link>
+        </li>
+        <li>
+          <Link to="/contact" className="hover:underline cursor-pointer">
+            Contact
+          </Link>
+        </li>
       </ul>
     </nav>
   );
