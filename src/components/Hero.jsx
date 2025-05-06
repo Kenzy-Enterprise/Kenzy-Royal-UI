@@ -8,13 +8,12 @@ const Hero = () => {
       <section className="flex flex-col md:flex-row items-center justify-between px-8 py-16 md:px-20 bg-[#964B00] text-white">
         {/* Left text content */}
         <div className="max-w-xl">
-          <h1 className="text-4xl md:text-6xl font-bold leading-snug mb-4 text-[#F7DC6F] font-serif">
+          <h1 className="text-4xl md:text-6xl font-bold leading-snug mb-4 font-serif">
             <span className="text-white">
-              {" "}
               Nourish <br />
               naturally, <br />
             </span>
-            Glow confidently.
+            <span className="text-[#F7DC6F] text-glow">Glow confidently.</span>
           </h1>
           {/* <p className="mt-2 text-white text-lg font-medium font-sans">
             Discover natural beauty with Kenzy Royal Enterprise.
@@ -26,7 +25,7 @@ const Hero = () => {
           <img
             src={image1}
             alt="Kenzy Royal Skincare"
-            className="w-[300px] md:w-[600px] rounded-lg shadow-lg"
+            className="w-[300px] md:w-[600px] rounded-lg image-glow"
           />
         </div>
       </section>

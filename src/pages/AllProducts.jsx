@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router";
 import image from "../assets/images/S1.jpg";
 import image1 from "../assets/images/L1.jpg";
 import image2 from "../assets/images/soap 1.jpg";
@@ -7,21 +8,21 @@ import image4 from "../assets/images/soap 2.jpg";
 import image5 from "../assets/images/L2.jpg";
 
 const products = [
-  { name: "Classic Shea Body Butter", price: "GHS 45", image: image },
-  { name: "Vanilla Lip Balm", price: "GHS 20", image: image1 },
-  { name: "Coconut Shea Soap", price: "GHS 25", image: image2 },
-  { name: "Lavender Shea Butter", price: "GHS 50", image: image3 },
-  { name: "Lemon Lip Balm", price: "GHS 20", image: image5 },
-  { name: "Herbal Shea Soap", price: "GHS 30", image: image4 },
-  { name: "Mango Shea Body Butter", price: "GHS 55", image: image },
-  { name: "Unscented Shea Butter", price: "GHS 40", image: image2 },
+  { id: "1", name: "Classic Shea Body Butter", price: "GHS 45", image },
+  { id: "2", name: "Vanilla Lip Balm", price: "GHS 20", image: image1 },
+  { id: "3", name: "Coconut Shea Soap", price: "GHS 25", image: image2 },
+  { id: "4", name: "Lavender Shea Butter", price: "GHS 50", image: image3 },
+  { id: "5", name: "Lemon Lip Balm", price: "GHS 20", image: image5 },
+  { id: "6", name: "Herbal Shea Soap", price: "GHS 30", image: image4 },
+  { id: "7", name: "Mango Shea Body Butter", price: "GHS 55", image: image },
+  { id: "8", name: "Unscented Shea Butter", price: "GHS 40", image: image2 },
 ];
 
 const AllProducts = () => {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredProducts = products.filter((product) =>
-    product.name.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredProducts = products.filter((p) =>
+    p.name.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -30,7 +31,6 @@ const AllProducts = () => {
         All Products
       </h2>
 
-      {/* Search Bar */}
       <div className="flex justify-center mb-10">
         <input
           type="text"
@@ -41,13 +41,13 @@ const AllProducts = () => {
         />
       </div>
 
-      {/* Product Grid */}
       <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         {filteredProducts.length > 0 ? (
-          filteredProducts.map((product, index) => (
-            <div
-              key={index}
-              className="bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden border border-[#964B00]"
+          filteredProducts.map((product) => (
+            <Link
+              key={product.id}
+              to={`/products/${product.id}`}
+              className="block bg-white rounded-xl shadow-md hover:shadow-lg transition overflow-hidden border border-[#964B00]"
             >
               <img
                 src={product.image}
@@ -60,7 +60,7 @@ const AllProducts = () => {
                 </h3>
                 <p className="text-gray-700 font-medium">{product.price}</p>
               </div>
-            </div>
+            </Link>
           ))
         ) : (
           <p className="text-center col-span-full text-[#964B00] font-medium">
