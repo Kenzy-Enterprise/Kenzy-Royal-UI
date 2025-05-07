@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../assets/images/kenzy body butter.png";
+import image from "../assets/images/about 2.jpg";
 
 const About = () => {
   return (
@@ -24,11 +24,11 @@ const About = () => {
         </p>
       </div>
 
-      <div className="md:w-1/2 flex justify-center">
+      <div className="md:w-1/2 flex justify-center items-center">
         <img
           src={image}
           alt="Kenzy Royal Products"
-          className="rounded-xl shadow-lg w-full max-w-md object-cover"
+          className="w-full md:w-[400px] lg:w-[500px] h-auto rounded-xl shadow-lg object-cover"
         />
       </div>
     </section>

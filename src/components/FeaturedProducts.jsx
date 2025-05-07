@@ -40,7 +40,7 @@ const FeaturedProducts = () => {
   };
 
   return (
-    <section className="bg-gray-100 py-12 font-serif">
+    <section className="bg-gray-50 py-12 font-serif">
       <div className="max-w-7xl mx-auto px-6 text-center">
         <h2 className="text-3xl font-bold text-[#964B00] mb-4">
           Our Featured Products
