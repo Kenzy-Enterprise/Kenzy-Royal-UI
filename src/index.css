@@ -1,0 +1,7 @@
+.text-glow {
+  text-shadow: 0 0 2px #f7dc6f, 0 0 2px #f7dc6f, 0 0 2px #f7dc6f;
+}
+
+.image-glow {
+  box-shadow: 0 0 5px #f7dc6f, 0 0 10px #f7dc6f, 0 0 10px #f7dc6f;
+}
