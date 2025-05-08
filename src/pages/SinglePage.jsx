@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import { useParams } from "react-router";
-import { useState } from "react";
 import { ArrowLeft } from "lucide-react";
 import { Link } from "react-router";
+import { toast } from "react-hot-toast";
+
 import image from "../assets/images/P2.jpg";
 import image1 from "../assets/images/L1.jpg";
 import image2 from "../assets/images/soap 1.jpg";
@@ -36,8 +37,7 @@ const SingleProduct = () => {
   };
 
   const handleAddToCart = () => {
-    console.log(`Added ${quantity} of ${product.name} to the cart.`);
-    alert(`Added ${quantity} of ${product.name} to your bag!`);
+    toast.success(`Added ${quantity} of ${product.name} to your cart!`);
   };
 
   if (!product) {
@@ -108,10 +108,12 @@ const SingleProduct = () => {
               className="bg-[#964B00] text-white px-6 py-2 font-serif rounded-full font-semibold hover:bg-[#7a3a00] transition"
               onClick={handleAddToCart}
             >
-              Add to Bag
+              Add to Cart
             </button>
             <a
-              href={`https://wa.me/233267698710?text=Hi%20I'm%20interested%20in%20the%20${product.name}`}
+              href={`https://wa.me/233267698710?text=Hi%20I'm%20interested%20in%20${quantity}%20of%20the%20${encodeURIComponent(
+                product.name
+              )}`}
               target="_blank"
               rel="noopener noreferrer"
               className="bg-[#F7DC6F] text-[#964B00] px-6 py-2 rounded-full font-serif font-semibold hover:bg-yellow-300 transition"
