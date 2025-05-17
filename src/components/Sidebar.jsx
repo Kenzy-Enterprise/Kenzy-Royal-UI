@@ -9,12 +9,6 @@ const Sidebar = () => {
         <LayoutGrid /> All Products
       </Link>
       <Link
-        to="/admindash/add"
-        className="hover:text-[#F7DC6F] flex items-center gap-2"
-      >
-        <PlusSquare /> Add Product
-      </Link>
-      <Link
         to="/admindash/overview"
         className="hover:text-[#F7DC6F] flex items-center gap-2"
       >

@@ -27,9 +27,15 @@ const AllProducts = () => {
 
   return (
     <section className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-12 mt-10">
-      <h2 className="text-3xl font-bold text-[#964B00] text-center mb-6">
+      <h2 className="text-3xl font-bold text-[#964B00] text-center mb-6 font-serif">
         All Products
       </h2>
+      <h1 className="text-center">
+        We’re so glad you’re here. Discover our handcrafted, shea-infused
+        creations made to inspire your glow and fuel your creativity. Every
+        product is a celebration of authenticity, wellness, and local artistry.
+      </h1>
+      <br />
 
       <div className="flex justify-center mb-10">
         <input

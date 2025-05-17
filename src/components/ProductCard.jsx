@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { Link } from "react-router";
 import image from "../assets/images/S1.jpg";
 import image1 from "../assets/images/L1.jpg";
 import image2 from "../assets/images/soap 1.jpg";

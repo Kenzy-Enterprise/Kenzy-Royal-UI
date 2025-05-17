@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const AddProductForm = () => {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
+  const [productDescription, setProductDescription] = useState("");
   const [productImage, setProductImage] = useState(null);
 
   const handleImageChange = (e) => {
@@ -15,6 +16,7 @@ const AddProductForm = () => {
     console.log({
       productName,
       productPrice,
+      productDescription,
       productImage,
     });
   };
@@ -59,6 +61,23 @@ const AddProductForm = () => {
             className="w-full px-4 py-2 border border-[#964B00] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7DC6F]"
             value={productPrice}
             onChange={(e) => setProductPrice(e.target.value)}
+            required
+          />
+        </div>
+        <div className="mb-6">
+          <label
+            htmlFor="productDescription"
+            className="block text-lg font-medium text-[#964B00] mb-2"
+          >
+            Product Description
+          </label>
+          <textarea
+            id="productDescription"
+            rows={4}
+            className="w-full px-4 py-2 border border-[#964B00] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7DC6F]"
+            value={productDescription}
+            onChange={(e) => setProductDescription(e.target.value)}
+            placeholder="Enter a brief description of the product..."
             required
           />
         </div>
