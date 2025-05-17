@@ -6,12 +6,13 @@ import image from "../assets/images/contact-girl.jpg";
 const ContactPage = () => {
   return (
     <div className="max-w-6xl mx-auto p-6 space-y-12 mt-12">
-      <div className="text-center mb-8">
-        <p className="text-[#964B00] font-bold">
-          At Kenzy Royal, we believe self-care and creativity go hand in hand.
-          Whether you’re curious about our shea-butter cosmetics or crafting
-          supplies, we’re here to help—and we’d love to hear from you.
-        </p>
+      <div className="text-center mb-8 text-5xl mt-7">
+        <span className="text-[#964B00] font-bold font-serif">
+          Nourish naturally,
+        </span>
+        <span className="text-[#F7DC6F] font-bold font-serif">
+          Glow confidently.
+        </span>
       </div>
       <div className="flex justify-center mb-8">
         <img
@@ -24,7 +25,9 @@ const ContactPage = () => {
       <div className="grid md:grid-cols-2 gap-8">
         {/* Contacts Us */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Contacts Us</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#964B00] font-serif">
+            Contacts Us
+          </h2>
           <p className="text-gray-600 mb-6">
             Need to get in touch with Kenzy Royal? We're here to help!
           </p>
@@ -56,7 +59,9 @@ const ContactPage = () => {
 
         {/* Leave A Comment */}
         <div>
-          <h2 className="text-2xl font-bold mb-4">Leave A Comment</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#964B00] font-serif">
+            Leave A Comment
+          </h2>
           <p className="text-gray-600 mb-6">
             Reach out with any questions or comments, and our team will get back
             to you.

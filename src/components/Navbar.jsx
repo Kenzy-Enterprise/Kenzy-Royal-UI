@@ -29,7 +29,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className="hover:underline">
+            <Link to="/about" className="hover:underline">
               About
             </Link>
           </li>
@@ -59,7 +59,7 @@ const Navbar = () => {
             </Link>
           </li>
           <li>
-            <Link to="/" className="hover:underline" onClick={toggleMenu}>
+            <Link to="/about" className="hover:underline" onClick={toggleMenu}>
               About
             </Link>
           </li>

@@ -16,12 +16,12 @@ const DashboardLayout = () => {
           >
             <Table /> Home
           </Link>
-          <Link
+          {/* <Link
             to="/products"
             className="hover:text-[#F7DC6F] flex items-center gap-2"
           >
             <Grid size={18} /> All Products
-          </Link>
+          </Link> */}
           <Link
             to="/admindash/add"
             className="hover:text-[#F7DC6F] flex items-center gap-2"

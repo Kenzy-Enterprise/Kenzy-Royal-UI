@@ -13,6 +13,8 @@ import AddProduct from "./pages/AddProduct";
 import DashOverview from "./pages/DashOverview";
 import Login from "./pages/Login";
 
+import AboutUs from "./pages/AboutUs";
+
 function App() {
   return (
     <BrowserRouter>
@@ -24,6 +26,7 @@ function App() {
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:id" element={<SinglePage />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<AboutUs />} />
         </Route>
 
         <Route path="/admindash" element={<DashboardLayout />}>
