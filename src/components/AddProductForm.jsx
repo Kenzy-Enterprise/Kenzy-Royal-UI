@@ -1,6 +1,8 @@
+// src/components/AddProductForm.jsx
 import React, { useState } from "react";
+import toast from "react-hot-toast";
 
-const AddProductForm = () => {
+const AddProductForm = ({ onClose }) => {
   const [productName, setProductName] = useState("");
   const [productPrice, setProductPrice] = useState("");
   const [productDescription, setProductDescription] = useState("");
@@ -12,103 +14,76 @@ const AddProductForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Here you would handle the form submission, like sending data to the backend
     console.log({
       productName,
       productPrice,
       productDescription,
       productImage,
     });
+    toast.success("Product added successfully!");
+    onClose?.(); // Close modal after submission
   };
 
   return (
-    <section className="bg-gray-50 min-h-screen py-12 px-4 sm:px-6 lg:px-12">
-      <h2 className="text-3xl font-bold text-[#964B00] text-center mb-6">
+    <form
+      onSubmit={handleSubmit}
+      className="bg-white p-4 rounded-xl shadow border border-[#964B00] space-y-4"
+    >
+      <h2 className="text-2xl font-bold text-[#964B00] text-center">
         Add New Product
       </h2>
 
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-lg mx-auto bg-white p-8 rounded-xl shadow-md border border-[#964B00]"
-      >
-        <div className="mb-6">
-          <label
-            htmlFor="productName"
-            className="block text-lg font-medium text-[#964B00] mb-2"
-          >
-            Product Name
-          </label>
-          <input
-            id="productName"
-            type="text"
-            className="w-full px-4 py-2 border border-[#964B00] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7DC6F]"
-            value={productName}
-            onChange={(e) => setProductName(e.target.value)}
-            required
-          />
-        </div>
+      <div>
+        <label className="block mb-1 text-[#964B00]">Product Name</label>
+        <input
+          type="text"
+          className="w-full border px-3 py-2 rounded-lg border-[#964B00] focus:ring-[#F7DC6F]"
+          value={productName}
+          onChange={(e) => setProductName(e.target.value)}
+          required
+        />
+      </div>
 
-        <div className="mb-6">
-          <label
-            htmlFor="productPrice"
-            className="block text-lg font-medium text-[#964B00] mb-2"
-          >
-            Product Price (GHS)
-          </label>
-          <input
-            id="productPrice"
-            type="number"
-            className="w-full px-4 py-2 border border-[#964B00] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7DC6F]"
-            value={productPrice}
-            onChange={(e) => setProductPrice(e.target.value)}
-            required
-          />
-        </div>
-        <div className="mb-6">
-          <label
-            htmlFor="productDescription"
-            className="block text-lg font-medium text-[#964B00] mb-2"
-          >
-            Product Description
-          </label>
-          <textarea
-            id="productDescription"
-            rows={4}
-            className="w-full px-4 py-2 border border-[#964B00] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7DC6F]"
-            value={productDescription}
-            onChange={(e) => setProductDescription(e.target.value)}
-            placeholder="Enter a brief description of the product..."
-            required
-          />
-        </div>
+      <div>
+        <label className="block mb-1 text-[#964B00]">Product Price (GHS)</label>
+        <input
+          type="number"
+          className="w-full border px-3 py-2 rounded-lg border-[#964B00]"
+          value={productPrice}
+          onChange={(e) => setProductPrice(e.target.value)}
+          required
+        />
+      </div>
 
-        <div className="mb-6">
-          <label
-            htmlFor="productImage"
-            className="block text-lg font-medium text-[#964B00] mb-2"
-          >
-            Upload Product Image
-          </label>
-          <input
-            id="productImage"
-            type="file"
-            accept="image/*"
-            className="w-full px-4 py-2 border border-[#964B00] rounded-lg focus:outline-none focus:ring-2 focus:ring-[#F7DC6F]"
-            onChange={handleImageChange}
-            required
-          />
-        </div>
+      <div>
+        <label className="block mb-1 text-[#964B00]">Product Description</label>
+        <textarea
+          className="w-full border px-3 py-2 rounded-lg border-[#964B00]"
+          value={productDescription}
+          onChange={(e) => setProductDescription(e.target.value)}
+          required
+        />
+      </div>
 
-        <div className="flex justify-center">
-          <button
-            type="submit"
-            className="px-6 py-3 bg-[#964B00] text-white rounded-full hover:bg-[#F7DC6F] focus:outline-none focus:ring-2 focus:ring-[#964B00]"
-          >
-            Add Product
-          </button>
-        </div>
-      </form>
-    </section>
+      <div>
+        <label className="block mb-1 text-[#964B00]">Upload Image</label>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={handleImageChange}
+          className="w-full border px-3 py-2 rounded-lg border-[#964B00]"
+        />
+      </div>
+
+      <div className="text-center">
+        <button
+          type="submit"
+          className="bg-[#964B00] text-white px-6 py-2 rounded-full hover:bg-[#F7DC6F] hover:text-black transition"
+        >
+          Add Product
+        </button>
+      </div>
+    </form>
   );
 };
 
