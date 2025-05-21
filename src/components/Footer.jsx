@@ -1,7 +1,7 @@
 import React from "react";
 import { InstagramIcon, MailIcon, PhoneCallIcon } from "lucide-react";
 
-const footer = () => {
+const Footer = () => {
   return (
     <footer className="bg-[#964B00] text-white py-12 px-6 md:px-16">
       <div className="flex flex-col md:flex-row justify-between gap-12">
@@ -21,17 +21,17 @@ const footer = () => {
           <h4 className="font-semibold font-serif mb-3">Quick Links</h4>
           <ul className="space-y-2 text-sm">
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/" className="hover:underline">
                 Home
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/about" className="hover:underline">
                 About Us
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/products" className="hover:underline">
                 Products
               </a>
             </li>
@@ -41,14 +41,13 @@ const footer = () => {
               </a>
             </li>
             <li>
-              <a href="#" className="hover:underline">
+              <a href="/contact" className="hover:underline">
                 Contact
               </a>
             </li>
           </ul>
         </div>
 
-        {/* Contact Info */}
         <div>
           <h4 className="font-semibold font-serif mb-3">Connect With Us</h4>
           <ul className="space-y-3 text-sm">
@@ -83,4 +82,4 @@ const footer = () => {
   );
 };
 
-export default footer;
+export default Footer;

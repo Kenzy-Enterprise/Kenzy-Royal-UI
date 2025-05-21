@@ -9,11 +9,14 @@ import SinglePage from "./pages/SinglePage";
 import Contact from "./pages/Contact";
 import DashboardLayout from "./components/DashboardLayout";
 import AdminDashboard from "./pages/AdminDashboard";
-import AddProduct from "./pages/AddProduct";
+
 import DashOverview from "./pages/DashOverview";
 import Login from "./pages/Login";
 
 import AboutUs from "./pages/AboutUs";
+import AdminProducts from "./components/AdminProducts";
+import DashHome from "./components/DashHome";
+import AdminProfile from "./components/AdminProfile";
 
 function App() {
   return (
@@ -31,8 +34,11 @@ function App() {
 
         <Route path="/admindash" element={<DashboardLayout />}>
           <Route index element={<AdminDashboard />} />
-          <Route path="add" element={<AddProduct />} />
+
           <Route path="overview" element={<DashOverview />} />
+          <Route path="home" element={<DashHome />} />
+          <Route path="products" element={<AdminProducts />} />
+          <Route path="profile" element={<AdminProfile />} />
         </Route>
 
         <Route path="/admindash/login" element={<Login />} />

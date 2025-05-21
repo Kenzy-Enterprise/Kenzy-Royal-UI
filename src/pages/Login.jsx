@@ -3,11 +3,17 @@ import backgroundImage from "../assets/images/contact 2.jpg";
 
 const Login = () => {
   return (
-    <div
-      className="flex items-center justify-center min-h-screen bg-cover bg-no-repeat"
-      style={{ backgroundImage: `url(${backgroundImage})` }}
-    >
-      <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+    <div className="relative min-h-screen flex items-center justify-center">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat z-0"
+        style={{ backgroundImage: `url(${backgroundImage})` }}
+      >
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/80 opacity-70"></div>
+      </div>
+      {/* Login Form Container */}
+      <div className="relative z-10 bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
         <h2 className="text-3xl font-bold text-[#964B00] mb-6 text-center">
           LOGIN
         </h2>
